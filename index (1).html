@@ -20613,23 +20613,23 @@ function gerarContrato(){
       // helpers
       const heading = (text) => new Paragraph({
         alignment: AlignmentType.CENTER,
-        spacing: { before: 0, after: 240 },
+        spacing: { before: 120, after: 320 },
         children: [new TextRun({ text, bold: true, size: 26, font: 'Arial' })]
       });
       const body = (text, opts={}) => new Paragraph({
         alignment: opts.center ? AlignmentType.CENTER : AlignmentType.JUSTIFIED,
-        spacing: { before: 80, after: 80 },
+        spacing: { before: 160, after: 160, line: 360, lineRule: 'auto' },
         indent: opts.indent ? { left: 720 } : {},
         children: [new TextRun({ text, size: 22, font: 'Arial', bold: opts.bold||false })]
       });
       const clausTitle = (t) => new Paragraph({
-        spacing: { before: 280, after: 120 },
+        spacing: { before: 480, after: 200 },
         children: [new TextRun({ text: t, bold: true, size: 22, font: 'Arial' })]
       });
-      const blank = () => new Paragraph({ spacing:{before:60,after:60}, children:[new TextRun('')] });
+      const blank = () => new Paragraph({ spacing:{before:160,after:160}, children:[new TextRun('')] });
       const mixedPara = (parts, opts={}) => new Paragraph({
         alignment: opts.center ? AlignmentType.CENTER : AlignmentType.JUSTIFIED,
-        spacing: { before: 80, after: 80 },
+        spacing: { before: 160, after: 160, line: 360, lineRule: 'auto' },
         children: parts.map(p => new TextRun({text:p.t, bold:p.b||false, size:22, font:'Arial'}))
       });
 
